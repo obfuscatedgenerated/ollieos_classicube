@@ -1,7 +1,7 @@
 {
-  "name": "hwpkg",
-  "version": "1.1.1",
-  "description": "An example package named hwpkg that prints a hello message for OllieOS.",
+  "name": "classicube",
+  "version": "0.0.1",
+  "description": "ClassiCube ported to OllieOS!",
   "main": "./src/index.ts",
   "scripts": {
     "build": "webpack --mode=production",

@@ -7,8 +7,7 @@ const pkgbuild = require("ollieos_pkgbuild");
 // key: the name of the program
 // value: the path to the entry point
 const programs = {
-    "hwpkg": "./src/index.ts",
-    // "hwpkg2": "./src/index.ts",
+    "classicube": "./src/index.ts",
 };
 
 // EDIT THIS ARRAY TO ADD DEPENDENCIES FOR THE VERSION CURRENTLY BEING BUILT
@@ -25,7 +24,7 @@ const externals = {};
 
 // EDIT THIS ARRAY TO DEFINE ADDITIONAL FILES TO BE INCLUDED IN THE PACKAGE
 const additional_files = [
-    "./src/test.txt"
+    {local_path: "./src/default.zip", pkg_path: "default.zip", binary: true}
     // "./path/to/file.txt",
     // {local_path: "./path/to/file.txt", pkg_path: "custom_name.txt"},
     // {local_path: "./path/to/image.png", pkg_path: "images/image.png", binary: true}
@@ -39,4 +38,7 @@ const triggers = {
     // "register_service": "path/to/service.json",
 };
 
-module.exports = pkgbuild(programs, deps, homepage_url, externals, triggers, additional_files);
+const config = pkgbuild(programs, deps, homepage_url, externals, triggers, additional_files);
+config.module.rules.push({ resourceQuery: /raw/, type: "asset/source" });
+
+module.exports = config;
