@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es2022",
+    "module": "es2020",
+    "outDir": "dist",
+    "typeRoots": [
+      "./declarations",
+      "./node_modules/@types"
+    ],
+    "moduleResolution": "node",
+    "allowJs": true,
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "webpack.config.js",
+  ]
+}
